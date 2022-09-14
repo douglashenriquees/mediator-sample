@@ -13,7 +13,11 @@
 
 * ```dotnet run --project project_name```
 
-## Executando o Container do SqlServer
+## Executando o Container do SqlServer no Mac
 
-* ```docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=strongpass" -p 1433:1433 -d --name my-mssql mcr.microsoft.com/mssql/server:2022-latest```
-* ```docker exec -it my-mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P strongpass```
+* ```docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=Strong@pass' -p 1433:1433 --name mssql-mediator -d mcr.microsoft.com/azure-sql-edge```
+
+## Migrations
+
+* ```dotnet tool update --global dotnet-ef```
+* ```dotnet ef migrations add initial --project project_name```
