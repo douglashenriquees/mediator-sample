@@ -8,7 +8,10 @@ public class AppDbContext : DbContext
 {
     public DbSet<Customer> Customers => Set<Customer>();
 
-    public AppDbContext() { }
+    public AppDbContext()
+    {
+        // apenas para executar o migrations
+    }
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
@@ -17,6 +20,8 @@ public class AppDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        // apenas para executar o migrations
+
         optionsBuilder.UseSqlServer();
     }
 

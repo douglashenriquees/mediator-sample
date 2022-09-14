@@ -21,3 +21,4 @@
 
 * ```dotnet tool update --global dotnet-ef```
 * ```dotnet ef migrations add initial --project project_name```
+* ```dotnet ef database update --project project_name --connection "connection_string"```
