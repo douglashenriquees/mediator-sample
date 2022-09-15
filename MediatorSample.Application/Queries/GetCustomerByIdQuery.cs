@@ -11,7 +11,6 @@ public class GetCustomerByIdQuery : IRequest<Customer?>
     public class GetCustomerByIdQueryHandler : IRequestHandler<GetCustomerByIdQuery, Customer?>
     {
         private readonly ICustomerRepository _customerRepository;
-
         private readonly IMediator _mediator;
 
         public GetCustomerByIdQueryHandler(ICustomerRepository customerRepository, IMediator mediator)

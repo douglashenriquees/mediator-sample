@@ -11,7 +11,6 @@ public class GetCustomerByEmailQuery : IRequest<Customer?>
     public class GetCustomerByEmailQueryHandler : IRequestHandler<GetCustomerByEmailQuery, Customer?>
     {
         private readonly ICustomerRepository _customerRepository;
-
         private readonly IMediator _mediator;
 
         public GetCustomerByEmailQueryHandler(ICustomerRepository customerRepository, IMediator mediator)

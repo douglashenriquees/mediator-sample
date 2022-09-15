@@ -9,7 +9,6 @@ public class GetAllCustomersQuery : IRequest<ICollection<Customer>?>
     public class GetAllCustomersQueryHandler : IRequestHandler<GetAllCustomersQuery, ICollection<Customer>?>
     {
         private readonly ICustomerRepository _customerRepository;
-
         private readonly IMediator _mediator;
 
         public GetAllCustomersQueryHandler(ICustomerRepository customerRepository, IMediator mediator)
