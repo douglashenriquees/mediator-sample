@@ -8,7 +8,7 @@ public interface ICustomerRepository
 
     Task<Customer?> GetByEmail(string email);
 
-    Task<ICollection<Customer>> GetAll();
+    Task<ICollection<Customer>?> GetAll();
 
     Task Add(Customer customer);
 

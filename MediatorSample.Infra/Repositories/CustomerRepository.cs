@@ -24,7 +24,7 @@ public class CustomerRepository : ICustomerRepository
         return await _context.Customers.FirstOrDefaultAsync(x => x.Email.Equals(email));
     }
 
-    public async Task<ICollection<Customer>> GetAll()
+    public async Task<ICollection<Customer>?> GetAll()
     {
         return await _context.Customers.ToListAsync();
     }
