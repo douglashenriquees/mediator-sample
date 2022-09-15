@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MediatorSample.Domain\MediatorSample.Domain.csproj" />
     <ProjectReference Include="..\MediatorSample.CrossCutting\MediatorSample.CrossCutting.csproj" />
     <ProjectReference Include="..\MediatorSample.Application\MediatorSample.Application.csproj" />
   </ItemGroup>
