@@ -9,11 +9,11 @@
 
 * ```dotnet add ./project_name/project_name.csproj reference ./project_name/project_name.csproj```
 
-## Executando o Projeto
+## Executando um Projeto
 
 * ```dotnet run --project project_name```
 
-## Executando o Container do SqlServer no Mac
+## Executando o Container do SqlServer *"Mac OS"*
 
 * ```docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=Strong@pass' -p 1433:1433 --name mssql-mediator -d mcr.microsoft.com/azure-sql-edge```
 
@@ -21,4 +21,4 @@
 
 * ```dotnet tool update --global dotnet-ef```
 * ```dotnet ef migrations add initial --project project_name```
-* ```dotnet ef database update --project project_name --connection "connection_string"```
+* ```dotnet ef database update --project project_name --connection *"connection_string"*```
