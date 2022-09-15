@@ -8,7 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfra(builder.Configuration);
-builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddMediatR(typeof(MediatorSample.Application.Queries.GetAllCustomersQuery).GetTypeInfo().Assembly);
 
 var app = builder.Build();
 
