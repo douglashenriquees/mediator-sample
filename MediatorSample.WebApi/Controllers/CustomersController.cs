@@ -9,6 +9,10 @@ namespace MediatorSample.WebApi.Controllers;
 [ApiController]
 public class CustomersController : ControllerBase
 {
+    // sem services
+    // sem repositorys
+    // apenas o Mediator
+
     private readonly IMediator _mediator;
 
     public CustomersController(IMediator mediator)
