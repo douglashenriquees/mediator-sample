@@ -1,3 +1,4 @@
+using MediatorSample.Application.Notifications;
 using MediatorSample.Domain.Entities;
 using MediatorSample.Domain.Interfaces;
 using MediatR;
@@ -32,6 +33,13 @@ public class CreateCustomerCommand : IRequest<int>
             customer.Email = createCustomerCommand.Email;
 
             await _customerRepository.Add(customer);
+
+            await _mediator.Publish(new CustomerActionNotification()
+            {
+                Name = createCustomerCommand.Name,
+                Email = createCustomerCommand.Email,
+                Action = ActionNotificationEnum.Created
+            }, cancellationToken);
 
             return customer.Id;
         }

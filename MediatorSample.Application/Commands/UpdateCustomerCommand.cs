@@ -1,3 +1,4 @@
+using MediatorSample.Application.Notifications;
 using MediatorSample.Domain.Interfaces;
 using MediatR;
 
@@ -31,6 +32,12 @@ public class UpdateCustomerCommand : IRequest<int>
 
             if (customer == null)
             {
+                await _mediator.Publish(new ErrorNotification()
+                {
+                    Error = "Customer not found",
+                    Stack = "Customer is null"
+                }, cancellationToken);
+
                 return default;
             }
 
@@ -38,6 +45,13 @@ public class UpdateCustomerCommand : IRequest<int>
             customer.Email = updateCustomerCommand.Email;
 
             await _customerRepository.Update(customer);
+
+            await _mediator.Publish(new CustomerActionNotification()
+            {
+                Name = updateCustomerCommand.Name,
+                Email = updateCustomerCommand.Email,
+                Action = ActionNotificationEnum.Updated
+            }, cancellationToken);
 
             return customer.Id;
         }
